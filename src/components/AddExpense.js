@@ -1,12 +1,32 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 export const AddExpense = () => {
 
-    const [make, setMake] = useState("");
-    const [register, setRegister] = useState("");
+    const [name, setName] = useState("");
     const [litres, setLitres] = useState("");
     const [price, setPrice] = useState("");
     const [distance, setDistance] = useState("");
+
+    const { addExpense } = useContext(GlobalContext);
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const newExpense = {
+            id: Math.floor(Math.random() * 1000000000),
+            name,
+            litres: +litres,
+            price: +price,
+            distance: +distance
+        }
+
+        addExpense(newExpense);
+        setName("");
+        setLitres("");
+        setPrice("");
+        setDistance("");
+    }
 
     return (
         <>
@@ -14,20 +34,12 @@ export const AddExpense = () => {
                 Add new expenses
             </h3>
 
-            <form>
+            <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <input type="text" 
-                    value={make}
-                    onChange={(e) => setMake(e.target.value)}
-                    placeholder="Make & model"
-                    />
-                </div>
-
-                <div className="form-control">
-                    <input type="text" 
-                    value={register}
-                    onChange={(e) => setRegister(e.target.value)}
-                    placeholder="Registration plate"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Car name (make & model, registration plate, etc.)"
                     />
                 </div>
 
@@ -56,7 +68,7 @@ export const AddExpense = () => {
                 </div>
 
                 <button className="btn">
-                    Add transaction
+                    Add refueling expense
                 </button>
             </form>
         </>

@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 :root {
-  --box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
+  --box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12),
+    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
 }
 
 * {
@@ -58,6 +59,20 @@ h4 {
   border-right: 0.0625rem solid #dedede;
 }
 
+.inc-single-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.25rem 0;
+}
+
+.inc-single-container > div {
+  flex: 1;
+  text-align: center;
+}
+
 .money {
   font-size: 1.25rem;
   letter-spacing: 0.0625rem;
@@ -77,8 +92,8 @@ label {
   margin: 0.625rem 0;
 }
 
-input[type = "text"],
-input[type = "number"] {
+input[type="text"],
+input[type="number"] {
   border: 0.0625rem solid #dedede;
   border-radius: 0.125rem;
   display: block;
@@ -147,7 +162,13 @@ input[type = "number"] {
   opacity: 1;
 }
 
-@media (max-width: 20rem) {
+@media (min-width: 30rem) {
+  .container {
+    width: 28rem;
+  }
+}
+
+@media (min-width: 20rem) and (max-width: 29rem) {
   .container {
     width: 18.75rem;
   }
