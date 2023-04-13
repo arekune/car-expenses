@@ -1,15 +1,16 @@
-import './App.css';
-import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { Header } from './components/Header';
-import { ExpenseTotal } from './components/ExpenseTotal';
-import { ExpenseList } from './components/ExpenseList';
-import { AddExpense } from './components/AddExpense';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { GlobalProvider } from "./context/GlobalState";
+import { Header } from "./components/Header";
+import { ExpenseTotal } from "./components/ExpenseTotal";
+import { ExpenseList } from "./components/ExpenseList";
+import { AddExpense } from "./components/AddExpense";
 
 function App() {
 
   return (
-    <>
+    <GlobalProvider>
       <Header />
 
       <div className="container">
@@ -17,7 +18,7 @@ function App() {
         <ExpenseList />
         <AddExpense />
       </div>
-    </>
+    </GlobalProvider>
   );
 }
 

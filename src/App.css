@@ -100,6 +100,10 @@ input[type = "number"] {
   width: 100%;
 }
 
+.btn:hover {
+  background-color: rgb(120, 91, 238);
+}
+
 .btn:focus,
 .delete-btn:focus {
   outline: 0;
@@ -114,20 +118,13 @@ input[type = "number"] {
 .list li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
+  border-right: 0.3125rem solid rgb(238, 138, 138);
   color: #333;
   display: flex;
   justify-content: space-between;
   position: relative;
   padding: 0.625rem;
   margin: 0.625rem 0;
-}
-
-.list li.plus {
-  border-right: 0.3125rem solid rgb(46, 204, 113);
-}
-
-.list li.minus {
-  border-right: 0.3125rem solid rgb(192, 57, 43);
 }
 
 .delete-btn {

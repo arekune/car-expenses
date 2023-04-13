@@ -1,9 +1,9 @@
 export const ExpenseTotal = () => {
     return (
         <>
-            <h4>
+            <h3>
                 Totals
-            </h4>
+            </h3>
 
             <div className="inc-exp-container">
                 <div>
