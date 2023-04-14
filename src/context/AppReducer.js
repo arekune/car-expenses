@@ -6,7 +6,7 @@ export default (state, action) => {
         case "ADD_EXPENSE":
             return {
                 ...state,
-                expenses: [action.payload ,...state.expenses]
+                expenses: [action.payload, ...state.expenses]
             };
         
         case "DELETE_EXPENSE":

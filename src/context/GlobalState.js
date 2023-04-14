@@ -11,13 +11,15 @@ const initState = {
 
 export const GlobalContext = createContext(initState);
 
-// Provider component
+// Provider component to wrap the component tree
 
 export const GlobalProvider = ({ children }) => {
 
+    // The useReducer hook takes in a reducer function and the initial state object
+    // The reducer function is responsible for handling state updates based on actions dispatched to it
     const [state, dispatch] = useReducer(AppReducer, initState);
 
-    // Actions
+    // Functions to update the state object, dispatched to AppReducer
 
     function addExpense(expense) {
         dispatch({
