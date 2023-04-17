@@ -4,7 +4,8 @@ import AppReducer from "./AppReducer";
 // Initial state
 
 const initState = {
-    expenses: []
+    expenses: [],
+    elecexpenses: []
 }
 
 // Create context
@@ -28,9 +29,23 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
+    function addElecExpense(expense) {
+        dispatch({
+            type: "ADD_ELEC_EXPENSE",
+            payload: expense
+        });
+    }
+
     function deleteExpense(id) {
         dispatch({
             type: "DELETE_EXPENSE",
+            payload: id
+        });
+    }
+
+    function deleteElecExpense(id) {
+        dispatch({
+            type: "DELETE_ELEC_EXPENSE",
             payload: id
         });
     }
@@ -39,8 +54,11 @@ export const GlobalProvider = ({ children }) => {
         <GlobalContext.Provider 
         value={{
                 expenses: state.expenses,
+                elecexpenses: state.elecexpenses,
                 addExpense,
-                deleteExpense
+                addElecExpense,
+                deleteExpense,
+                deleteElecExpense
             }}
         >
             {children}

@@ -16,7 +16,7 @@ export const ElecExpenseList = () => {
                 {elecexpenses.map(elecexpense => (
                     <ElecExpense 
                     key={elecexpense.id}
-                    expense={elecexpense}
+                    elecexpense={elecexpense}
                     />
                 ))}
             </ul>

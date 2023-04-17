@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 import { ExpenseTotal } from "./components/ExpenseTotal";
 import { ExpenseList } from "./components/ExpenseList";
 import { AddExpense } from "./components/AddExpense";
+import { ElecExpenseList } from "./components/ElecExpenseList";
 import { AddElecExpense } from "./components/AddElecExpense";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <ExpenseTotal />
         <ExpenseList />
         <AddExpense />
+        <ElecExpenseList />
         <AddElecExpense />
       </div>
     </GlobalProvider>
