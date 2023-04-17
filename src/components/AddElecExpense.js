@@ -1,19 +1,19 @@
 import { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-export const AddExpense = () => {
+export const AddElecExpense = () => {
 
     const [name, setName] = useState("");
     const [kilowattHour, setKilowattHour] = useState("");
     const [price, setPrice] = useState("");
     const [distance, setDistance] = useState("");
 
-    const { addExpense } = useContext(GlobalContext);
+    const { addElecExpense } = useContext(GlobalContext);
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const newExpense = {
+        const newElecExpense = {
             id: Math.floor(Math.random() * 1000000000),
             name,
             kilowattHour: +kilowattHour,
@@ -21,7 +21,7 @@ export const AddExpense = () => {
             distance: +distance
         }
 
-        addExpense(newExpense);
+        addElecExpense(newElecExpense);
         setName("");
         setKilowattHour("");
         setPrice("");
@@ -55,7 +55,7 @@ export const AddExpense = () => {
                     <input type="number" 
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    placeholder="Price of refueling"
+                    placeholder="Price of charging"
                     />
                 </div>
 

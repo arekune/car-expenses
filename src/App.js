@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 import { ExpenseTotal } from "./components/ExpenseTotal";
 import { ExpenseList } from "./components/ExpenseList";
 import { AddExpense } from "./components/AddExpense";
+import { AddElecExpense } from "./components/AddElecExpense";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <ExpenseTotal />
         <ExpenseList />
         <AddExpense />
+        <AddElecExpense />
       </div>
     </GlobalProvider>
   );
