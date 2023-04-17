@@ -10,6 +10,7 @@
 }
 
 body {
+  position: relative;
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
@@ -18,35 +19,22 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: "Lato", sans-serif;
+  background: linear-gradient(
+    to right, #0D7377,
+    #827397, #115173);
+  background-size: 400% 400%;
+  animation: container 15s infinite ease-in-out;
 }
 
-selector .bubbles span{
-  background: var(--color1);
-  width: var(--size);
-  height: var(--size);
-  display: inline-block;
-  border-radius: 50%;
-  margin: 0 5px;
-  box-shadow: 0 0 0 6px var(--color1-shadow),
-  0 0 50px var(--color1),
-  0 0 100px var(--color1);
-  animation:animate 20s linear infinite;
-  animation-duration: calc(125s/var(--i));
-}
-
-selector .bubbles span:nth-child(even){
-  background: var(--color2);
-  box-shadow: 0 0 0 6px var(--color2-shadow),
-  0 0 50px var(--color2),
-  0 0 100px var(--color2);
-  
-}
-@keyframes animate{
+@keyframes container {
   0%{
-      transform: translateY(100vh) scale(0);
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
   }
   100%{
-      transform: translateY(-10vh) scale(1);
+    background-position: 0 50%;
   }
 }
 
@@ -58,13 +46,26 @@ selector .bubbles span:nth-child(even){
 h1 {
   letter-spacing: 0.0625rem;
   margin: 0;
+  ;
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: cyan;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 h3 {
-  border-bottom: 0.0625rem solid #E43F5A;
+  border-bottom: 0.2rem solid #E43F5A;
   padding-bottom: 0.625rem;
   margin: 2.5rem 0 0.625rem;
+  color: cyan;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+
 }
+
 
 h4 {
   margin: 0 1.5rem;
@@ -137,10 +138,13 @@ input[type="number"] {
 
 
 .btn {
+  font-size: 2rem;
+  font-weight: 700;
   cursor: pointer;
-  background-color: #E43F5A;
-  box-shadow: var(--box-shadow);
-  color: #fff;
+  background-color: #1F4058;
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan;
+  color: white;
   border: 0;
   display: block;
   font-size: 1rem;
@@ -148,15 +152,21 @@ input[type="number"] {
   padding: 0.625rem;
   width: 100%;
   border-radius: 0.5rem;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 
 
 .btn:hover {
-  background-color: #CD5C5C;
-  box-shadow: 0 0 5px #F08080,
-  0 0 25px #F08080, 0 0 50px #F08080,
-  0 0 100px #F08080, 0 0 200px #F08080;
+  transform: translateY(5px);
+  background-color: rgb(46, 204, 112);
+  color: black;
+  box-shadow: 0 0 5px rgb(46, 204, 112),
+  0 0 25px rgb(46, 204, 112), 0 0 50px rgb(46, 204, 112),
+  0 0 100px rgb(46, 204, 112), 0 0 200px rgb(46, 204, 112);
 }
 
 
