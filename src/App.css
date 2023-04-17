@@ -20,6 +20,36 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+selector .bubbles span{
+  background: var(--color1);
+  width: var(--size);
+  height: var(--size);
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 5px;
+  box-shadow: 0 0 0 6px var(--color1-shadow),
+  0 0 50px var(--color1),
+  0 0 100px var(--color1);
+  animation:animate 20s linear infinite;
+  animation-duration: calc(125s/var(--i));
+}
+
+selector .bubbles span:nth-child(even){
+  background: var(--color2);
+  box-shadow: 0 0 0 6px var(--color2-shadow),
+  0 0 50px var(--color2),
+  0 0 100px var(--color2);
+  
+}
+@keyframes animate{
+  0%{
+      transform: translateY(100vh) scale(0);
+  }
+  100%{
+      transform: translateY(-10vh) scale(1);
+  }
+}
+
 .container {
   margin: 1.875rem auto;
   width: 28rem;
@@ -31,7 +61,7 @@ h1 {
 }
 
 h3 {
-  border-bottom: 0.0625rem solid #bbb;
+  border-bottom: 0.0625rem solid #E43F5A;
   padding-bottom: 0.625rem;
   margin: 2.5rem 0 0.625rem;
 }
@@ -39,15 +69,17 @@ h3 {
 h4 {
   margin: 0 1.5rem;
   text-transform: uppercase;
+  color: white;
 }
 
 .inc-exp-container {
-  background-color: #fff;
+  background-color: #1F4058;
   box-shadow: var(--box-shadow);
   padding: 1.25rem;
   display: flex;
   justify-content: space-between;
   margin: 1.25rem 0;
+  border-radius: 2rem/2rem;
 }
 
 .inc-exp-container > div {
@@ -56,16 +88,17 @@ h4 {
 }
 
 .inc-exp-container > div:first-of-type {
-  border-right: 0.0625rem solid #dedede;
+  border-right: 0.1rem solid #dedede;
 }
 
 .inc-single-container {
-  background-color: #fff;
+  background-color: #1F4058;
   box-shadow: var(--box-shadow);
   padding: 1.25rem;
   display: flex;
   justify-content: space-between;
   margin: 1.25rem 0;
+  border-radius: 2rem/2rem;
 }
 
 .inc-single-container > div {
@@ -95,16 +128,17 @@ label {
 input[type="text"],
 input[type="number"] {
   border: 0.0625rem solid #dedede;
-  border-radius: 0.125rem;
+  border-radius: 0.5rem;
   display: block;
   font-size: 1rem;
   padding: 0.625rem;
   width: 100%;
 }
 
+
 .btn {
   cursor: pointer;
-  background-color: rgb(156, 136, 255);
+  background-color: #E43F5A;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -113,11 +147,20 @@ input[type="number"] {
   margin: 0.625rem 0 1.875rem;
   padding: 0.625rem;
   width: 100%;
+  border-radius: 0.5rem;
 }
 
+
+
 .btn:hover {
-  background-color: rgb(120, 91, 238);
+  background-color: #CD5C5C;
+  box-shadow: 0 0 5px #F08080,
+  0 0 25px #F08080, 0 0 50px #F08080,
+  0 0 100px #F08080, 0 0 200px #F08080;
 }
+
+
+
 
 .btn:focus,
 .delete-btn:focus {
@@ -133,13 +176,14 @@ input[type="number"] {
 .list li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
-  border-right: 0.3125rem solid rgb(238, 138, 138);
+  border-right: 0.4125rem solid rgb(238, 138, 138);
   color: #333;
   display: flex;
   justify-content: space-between;
   position: relative;
   padding: 0.625rem;
   margin: 0.625rem 0;
+  border-radius: 0.5rem/0.5rem;
 }
 
 .delete-btn {
