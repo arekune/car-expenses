@@ -50,19 +50,19 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75rem;
-  color: cyan;
+  font-size: 4rem;
+  color: #FFF8DC;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
 h3 {
-  border-bottom: 0.2rem solid #E43F5A;
+  border-bottom: 0.2rem solid cyan;
   padding-bottom: 0.625rem;
   margin: 2.5rem 0 0.625rem;
-  color: cyan;
+  color: #FFF8DC;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 
 }
 
