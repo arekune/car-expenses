@@ -1,32 +1,63 @@
 import { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import gasoline from "../assets/gasoline.svg";
+import electric from "../assets/electric.svg";
 
 export const ExpenseForm = () => {
 
-    const [name, setName] = useState("");
-    const [litres, setLitres] = useState("");
-    const [price, setPrice] = useState("");
-    const [distance, setDistance] = useState("");
+    const [carName, setCarName] = useState("");
+    const [fuelQuantity, setFuelQuantity] = useState("");
+    const [expenseAmount, setExpenseAmount] = useState("");
+    const [distanceDriven, setDistanceDriven] = useState("");
+
+    const [isGasDieselTab, setIsGasDieselTab] = useState(true);
 
     const { addExpense } = useContext(GlobalContext);
 
-    const onSubmit = (e) => {
+    const handleTabClick = (e) => {
+        const tabName = e.target.getAttribute("name");
+        setIsGasDieselTab(tabName === "gas-diesel");
+        setFuelQuantity("");
+      };
+
+    const handleSubmit = (e) => {
         e.preventDefault();
+
+        const expenseType = isGasDieselTab ? "gas-diesel" : "electric";
 
         const newExpense = {
             id: Date.now(),
-            name,
-            litres: +litres,
-            price: +price,
-            distance: +distance
+            carName,
+            expenseType,
+            fuelQuantity: +fuelQuantity,
+            expenseAmount: +expenseAmount,
+            distanceDriven: +distanceDriven
         }
 
         addExpense(newExpense);
-        setName("");
-        setLitres("");
-        setPrice("");
-        setDistance("");
+
+        setCarName("");
+        setFuelQuantity("");
+        setExpenseAmount("");
+        setDistanceDriven("");
     }
+
+    const fuelQuantityInput = isGasDieselTab ?
+        <div className="form-control">
+            <input type="number" 
+            value={fuelQuantity}
+            onChange={(e) => setFuelQuantity(e.target.value)}
+            placeholder="Litres refueled"
+            />
+        </div>
+    :
+        <div className="form-control">
+            <input type="number" 
+            value={fuelQuantity}
+            onChange={(e) => setFuelQuantity(e.target.value)}
+            placeholder="kWh recharged"
+            />
+         </div>;
 
     return (
         <>
@@ -34,41 +65,64 @@ export const ExpenseForm = () => {
                 Add new expenses
             </h3>
 
-            <form onSubmit={onSubmit}>
+            <div className="tab-container">
+                <button 
+                name="gas-diesel" 
+                onClick={handleTabClick} 
+                style={{ backgroundColor: isGasDieselTab ? "cyan" : "gray" }}
+                >
+                    <img 
+                    src={gasoline} 
+                    className="svg"
+                    style={{ height: 25, width: 25 }}
+                    alt="Gas/Diesel" 
+                    />
+                </button>
+
+                <button name="electric" 
+                onClick={handleTabClick} 
+                style={{ backgroundColor: isGasDieselTab ? "gray" : "cyan" }}
+                >
+                    <img 
+                    src={electric} 
+                    className="svg"
+                    style={{ height: 25, width: 25 }}
+                    alt="Electric" 
+                    />
+                </button>
+            </div>
+
+            <form onSubmit={handleSubmit}>
                 <div className="form-control">
                     <input type="text" 
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={carName}
+                    onChange={(e) => setCarName(e.target.value)}
                     placeholder="Car name (make & model, registration plate, etc.)"
                     />
                 </div>
 
                 <div className="form-control">
+                    {fuelQuantityInput}
+                </div>
+
+                <div className="form-control">
                     <input type="number" 
-                    value={litres}
-                    onChange={(e) => setLitres(e.target.value)}
-                    placeholder="Litres refueled"
+                    value={expenseAmount}
+                    onChange={(e) => setExpenseAmount(e.target.value)}
+                    placeholder="Cost"
                     />
                 </div>
 
                 <div className="form-control">
                     <input type="number" 
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder="Price of refueling"
-                    />
-                </div>
-
-                <div className="form-control">
-                    <input type="number" 
-                    value={distance}
-                    onChange={(e) => setDistance(e.target.value)}
+                    value={distanceDriven}
+                    onChange={(e) => setDistanceDriven(e.target.value)}
                     placeholder="Distance driven"
                     />
                 </div>
 
                 <button className="btn">
-                    Add refueling expense
+                    Add expense
                 </button>
             </form>
         </>

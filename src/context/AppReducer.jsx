@@ -14,16 +14,5 @@ export default (state, action) => {
                 ...state,
                 expenses: state.expenses.filter(expense => expense.id !== action.payload)
             };
-
-        case "ADD_ELEC_EXPENSE":
-            return {
-                ...state,
-                elecexpenses: [action.payload, ...state.elecexpenses]
-            };
-        case "DELETE_ELEC_EXPENSE":
-            return {
-                ...state,
-                elecexpenses: state.elecexpenses.filter(elecexpense => elecexpense.id !== action.payload)
-            };
     }
 }

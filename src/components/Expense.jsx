@@ -8,8 +8,8 @@ function Expense({ expense }) {
     return (
         <div>
             <li>
-                {expense.name}
-                <span>{expense.price} €</span>
+                {expense.carName}
+                <span>{expense.expenseAmount} €</span>
                 <button className="delete-btn" onClick={() => deleteExpense(expense.id)}>
                     x
                 </button>
