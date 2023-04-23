@@ -1,29 +1,29 @@
 import { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-export const AddElecExpense = () => {
+export const ExpenseForm = () => {
 
     const [name, setName] = useState("");
-    const [kilowattHour, setKilowattHour] = useState("");
+    const [litres, setLitres] = useState("");
     const [price, setPrice] = useState("");
     const [distance, setDistance] = useState("");
 
-    const { addElecExpense } = useContext(GlobalContext);
+    const { addExpense } = useContext(GlobalContext);
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const newElecExpense = {
+        const newExpense = {
             id: Math.floor(Math.random() * 1000000000),
             name,
-            kilowattHour: +kilowattHour,
+            litres: +litres,
             price: +price,
             distance: +distance
         }
 
-        addElecExpense(newElecExpense);
+        addExpense(newExpense);
         setName("");
-        setKilowattHour("");
+        setLitres("");
         setPrice("");
         setDistance("");
     }
@@ -31,7 +31,7 @@ export const AddElecExpense = () => {
     return (
         <>
             <h3>
-                Add new electric expenses
+                Add new expenses
             </h3>
 
             <form onSubmit={onSubmit}>
@@ -45,9 +45,9 @@ export const AddElecExpense = () => {
 
                 <div className="form-control">
                     <input type="number" 
-                    value={kilowattHour}
-                    onChange={(e) => setKilowattHour(e.target.value)}
-                    placeholder="Number of kilowatt-hours charged"
+                    value={litres}
+                    onChange={(e) => setLitres(e.target.value)}
+                    placeholder="Litres refueled"
                     />
                 </div>
 
@@ -55,7 +55,7 @@ export const AddElecExpense = () => {
                     <input type="number" 
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    placeholder="Price of charging"
+                    placeholder="Price of refueling"
                     />
                 </div>
 
@@ -68,7 +68,7 @@ export const AddElecExpense = () => {
                 </div>
 
                 <button className="btn">
-                    Add charging electric expense
+                    Add refueling expense
                 </button>
             </form>
         </>
