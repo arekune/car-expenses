@@ -14,7 +14,7 @@ export const ExpenseForm = () => {
         e.preventDefault();
 
         const newExpense = {
-            id: Math.floor(Math.random() * 1000000000),
+            id: Date.now(),
             name,
             litres: +litres,
             price: +price,
