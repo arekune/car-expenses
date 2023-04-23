@@ -4,7 +4,8 @@ import AppReducer from "./AppReducer";
 // Initial state
 
 const initState = {
-    expenses: []
+    expenses: [],
+    cars: []
 }
 
 // Create context

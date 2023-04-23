@@ -5,7 +5,7 @@ import { GlobalProvider } from "./context/GlobalState";
 import { Header } from "./components/Header";
 import { ExpenseTotal } from "./components/ExpenseTotal";
 import { ExpenseList } from "./components/ExpenseList";
-import { AddExpense } from "./components/AddExpense";
+import { ExpenseForm } from "./components/ExpenseForm";
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
       <div className="container">
         <ExpenseTotal />
         <ExpenseList />
-        <AddExpense />
+        <ExpenseForm />
       </div>
     </GlobalProvider>
   );
