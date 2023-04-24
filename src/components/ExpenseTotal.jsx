@@ -272,7 +272,21 @@ export const ExpenseTotal = () => {
                 null
             }
 
-            <Link to={"/car-list"} onClick={() => navigate("/car-list")}>
+            <Link to={"/car-list"} onClick={() => navigate("/car-list")}
+            style={{
+                display: 'inline-block',
+                padding: '0.5em 0.75em',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '0.5em',
+                border: 'solid',
+                cursor: 'pointer',
+                fontFamily: "Gill Sans MT",
+                fontSize: '1.11em',
+                transition: 'all 0.3s ease-in-out',
+                }}
+
+            >
                 See totals and averages per car
             </Link>
         </>
