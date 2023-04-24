@@ -6,7 +6,7 @@ function Expense({ expense }) {
     const { deleteExpense } = useContext(GlobalContext);
 
     return (
-        <div>
+        <>
             <li>
                 {expense.carName}
                 <span>{expense.expenseAmount} €</span>
@@ -14,7 +14,7 @@ function Expense({ expense }) {
                     x
                 </button>
             </li>
-    </div>
+    </>
     )
 }
 
