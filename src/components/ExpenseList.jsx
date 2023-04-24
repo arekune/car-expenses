@@ -24,7 +24,19 @@ export const ExpenseList = () => {
                 ))}
             </ul>
 
-            <Link to={"/expense-list-full"} onClick={() => navigate("/expense-list-full")}>
+            <Link to={"/expense-list-full"} onClick={() => navigate("/expense-list-full")}
+            style={{
+                display: 'inline-block',
+                padding: '0.5em 0.75em',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '0.5em',
+                border: 'solid',
+                cursor: 'pointer',
+                fontFamily: "Gill Sans MT",
+                fontSize: '1.11em',
+                }}
+            >
                 See full expense history
             </Link>
         </>

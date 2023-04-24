@@ -200,7 +200,14 @@ input[type="number"] {
 }
 
 .car-list {
-  list-style-type: none;
+  display:flexbox;
+  font-size: 1.75rem;
+  border: solid cyan;
+  border-radius: 1rem;
+  box-shadow: 1rem 0.5rem 0.25rem cyan;
+  color: #fff8dc;
+  background-color: rgb(191, 58, 43);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .car-list li {
@@ -208,6 +215,9 @@ input[type="number"] {
   background-color: #1f4058;
   padding: 0.625rem;
   position: relative;
+  border-radius: 1rem;
+  font-size: 1.11rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .delete-btn {
@@ -215,7 +225,7 @@ input[type="number"] {
   background-color: rgb(231, 76, 60);
   border: 0;
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   line-height: 1.25rem;
   padding: 0.125rem 0.3125rem;
   position: absolute;
