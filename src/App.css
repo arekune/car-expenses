@@ -199,6 +199,17 @@ input[type="number"] {
   border-radius: 0.5rem/0.5rem;
 }
 
+.car-list {
+  list-style-type: none;
+}
+
+.car-list li {
+  color: #fff8dc;
+  background-color: #1f4058;
+  padding: 0.625rem;
+  position: relative;
+}
+
 .delete-btn {
   cursor: pointer;
   background-color: rgb(231, 76, 60);
@@ -216,6 +227,11 @@ input[type="number"] {
 }
 
 .list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.car-list li:hover .delete-btn {
+  background-color: #9a8baf;
   opacity: 1;
 }
 

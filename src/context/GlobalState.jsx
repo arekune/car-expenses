@@ -5,7 +5,7 @@ import AppReducer from "./AppReducer";
 
 const initState = {
     expenses: [],
-    cars: {}
+    cars: []
 }
 
 // Create context
@@ -57,6 +57,7 @@ export const GlobalProvider = ({ children }) => {
         <GlobalContext.Provider 
         value={{
                 expenses: state.expenses,
+                cars: state.cars,
                 addExpense,
                 deleteExpense,
                 updateCar,

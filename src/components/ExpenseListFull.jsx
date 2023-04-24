@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
 import Expense from "./Expense";
 
@@ -11,6 +11,7 @@ export const ExpenseListFull = () => {
     return (
         <>
             <div className="arrow" onClick={() => navigate("/")}/>
+            
             <h3>
                 Refueling history
             </h3>
