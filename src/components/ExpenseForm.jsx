@@ -12,7 +12,7 @@ export const ExpenseForm = () => {
 
     const [isGasDieselTab, setIsGasDieselTab] = useState(true);
 
-    const { addExpense, updateCar } = useContext(GlobalContext);
+    const { cars, addExpense, updateCar } = useContext(GlobalContext);
 
     const handleTabClick = (e) => {
         const tabName = e.target.getAttribute("name");
@@ -40,18 +40,20 @@ export const ExpenseForm = () => {
         // Handle updating individual cars
         let updatedCar;
 
-        if (!updatedCar) {
+        const carIndex = cars.findIndex(car => car.carName === carName);
+        if (carIndex === -1) {
+            // Car not found, add new car
             updatedCar = {
-                carType: isGasDieselTab ? "Gas/Diesel" : "Electric",
-                expenses: 0,
-                consumption: 0,
-                distanceDriven: 0
-            }
+                carName: carName,
+                carType: isGasDieselTab ? "Gas/Diesel" : "Electric"
+            };
+        } else {
+            // Car found, update existing car
+            updatedCar = {
+              carName: carName,
+              carType: isGasDieselTab ? "Gas/Diesel" : "Electric"
+            };
         };
-
-        updatedCar.expenses += expenseAmount;
-        updatedCar.consumption += fuelQuantity;
-        updatedCar.distanceDriven += distanceDriven;
 
         updateCar(carName, updatedCar);
 

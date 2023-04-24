@@ -17,18 +17,28 @@ export default (state, action) => {
         
         case "UPDATE_CAR":
             const { carName, updatedCar } = action.payload;
-            return {
+            const carIndex = state.cars.findIndex(car => car.carName === carName);
+            if (carIndex === -1) {
+                // Car not found, add new car
+                return {
                 ...state,
-                cars: {
-                    ...state.cars,
-                    [carName]: updatedCar
-                }
-            };
+                cars: [...state.cars, updatedCar]
+                };
+            } else {
+                // Car found, update existing car
+                const updatedCars = [...state.cars];
+                updatedCars[carIndex] = updatedCar;
+                return {
+                ...state,
+                cars: updatedCars
+                };
+            }
         
         case "DELETE_CAR":
             return {
                 ...state,
-                cars: state.cars.filter(car => car.carName !== action.payload)
-            }
+                cars: state.cars.filter(car => car.carName !== action.payload),
+                expenses: state.expenses.filter(expense => expense.carName !== action.payload)
+            };
     }
 }

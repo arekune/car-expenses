@@ -1,25 +1,31 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
 import Car from "./Car";
 
 export const CarList = () => {
 
+    const navigate = useNavigate();
     const { cars } = useContext(GlobalContext);
 
     return (
         <>
+            <div className="arrow" onClick={() => navigate("/")}/>
+
             <h3>
                 Totals & averages by car
             </h3>
 
-            <ul id="list" className="list">
-                {Object.keys(cars || {}).length === 0 ? (
-                    <li>No cars found</li>
+            <ul className="car-list">
+                {cars?.length === 0 ? (
+                    <div>
+                        No cars found
+                    </div>
                 ) : (
-                    Object.keys(cars || {}).map(carName => (
+                    cars?.map(car => (
                         <Car 
-                        key={carName}
-                        carName={carName}
+                        key={cars.carName}
+                        car={car}
                         />
                     ))
                 )}
