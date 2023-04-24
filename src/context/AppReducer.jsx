@@ -21,16 +21,16 @@ export default (state, action) => {
             if (carIndex === -1) {
                 // Car not found, add new car
                 return {
-                ...state,
-                cars: [...state.cars, updatedCar]
+                    ...state,
+                    cars: [...state.cars, updatedCar]
                 };
             } else {
                 // Car found, update existing car
                 const updatedCars = [...state.cars];
                 updatedCars[carIndex] = updatedCar;
                 return {
-                ...state,
-                cars: updatedCars
+                    ...state,
+                    cars: updatedCars
                 };
             }
         

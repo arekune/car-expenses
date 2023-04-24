@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
+import { average } from "../utils/Utils";
 import total from "../assets/total.svg";
 import gasoline from "../assets/gasoline.svg";
 import electric from "../assets/electric.svg";
@@ -21,6 +22,7 @@ export const ExpenseTotal = () => {
     const distance = expenses.map(expense => expense.distanceDriven);
     const distanceTotal = distance.reduce((accumulator, item) => (accumulator += item), 0).toFixed(1);
 
+
     // Totals for gas/diesel cars only
     const gasPrice = gasExpenses.map(expense => expense.expenseAmount);
     const gasPriceTotal = gasPrice.reduce((accumulator, item) => (accumulator += item), 0).toFixed(1);
@@ -30,6 +32,7 @@ export const ExpenseTotal = () => {
 
     const gasConsumption = gasExpenses.map(expense => expense.fuelQuantity);
     const gasConsumptionTotal = gasConsumption.reduce((accumulator, item) => (accumulator += item), 0).toFixed(1);
+
 
     // Totals for electric cars only
     const electricPrice = electricExpenses.map(expense => expense.expenseAmount);
@@ -41,14 +44,6 @@ export const ExpenseTotal = () => {
     const electricConsumption = electricExpenses.map(expense => expense.fuelQuantity);
     const electricConsumptionTotal = electricConsumption.reduce((accumulator, item) => (accumulator += item), 0).toFixed(1);
 
-    // Function to calculate all averages
-    const average = (dividend, divisor) => {
-        if (dividend === "0.0" || divisor === "0.0") {
-            return "0.0";
-        }
-
-        return (dividend / divisor * 100).toFixed(1);
-    }
 
     // Handler function for activating tab
     const handleTabClick = (e) => {
@@ -274,15 +269,15 @@ export const ExpenseTotal = () => {
 
             <Link to={"/car-list"} onClick={() => navigate("/car-list")}
             style={{
-                display: 'inline-block',
-                padding: '0.5em 0.75em',
-                color: 'white',
-                textDecoration: 'none',
-                borderRadius: '0.5em',
-                border: 'solid',
-                cursor: 'pointer',
+                display: "inline-block",
+                padding: "0.5em 0.75em",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "0.5em",
+                border: "solid",
+                cursor: "pointer",
                 fontFamily: "Gill Sans MT",
-                fontSize: '1.11em',
+                fontSize: "1.11em",
                 }}
 
             >

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { average } from "../utils/Utils";
 
 function Car({ car }) {
 
@@ -30,8 +31,8 @@ function Car({ car }) {
                 <p>Expenses: {expenseTotal}</p>
                 <p>Consumption: {consumptionTotal}</p>
                 <p>Distance driven: {distanceTotal}</p>
-                <p>Average expenses per 100 km: {expenseTotal / (distanceTotal / 100)} €</p>
-                <p>Average consumption per 100 km: {consumptionTotal / (distanceTotal / 100)} {fuelType}</p>
+                <p>Average expenses per 100 km: {average(expenseTotal, distanceTotal)} €</p>
+                <p>Average consumption per 100 km: {average(consumptionTotal, distanceTotal)} {fuelType}</p>
 
                 <button className="delete-btn" onClick={() => deleteCar(car.carName)}>
                     x

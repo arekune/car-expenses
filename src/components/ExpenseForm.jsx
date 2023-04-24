@@ -12,7 +12,7 @@ export const ExpenseForm = () => {
 
     const [isGasDieselTab, setIsGasDieselTab] = useState(true);
 
-    const { cars, addExpense, updateCar } = useContext(GlobalContext);
+    const { addExpense, updateCar } = useContext(GlobalContext);
 
     const handleTabClick = (e) => {
         const tabName = e.target.getAttribute("name");
@@ -37,32 +37,22 @@ export const ExpenseForm = () => {
 
         addExpense(newExpense);
 
-        // Handle updating individual cars
-        let updatedCar;
 
-        const carIndex = cars.findIndex(car => car.carName === carName);
-        if (carIndex === -1) {
-            // Car not found, add new car
-            updatedCar = {
-                carName: carName,
-                carType: isGasDieselTab ? "Gas/Diesel" : "Electric"
-            };
-        } else {
-            // Car found, update existing car
-            updatedCar = {
-              carName: carName,
-              carType: isGasDieselTab ? "Gas/Diesel" : "Electric"
-            };
-        };
+        // Handle updating individual cars
+        const updatedCar = {
+            carName: carName,
+            carType: isGasDieselTab ? "Gas/Diesel" : "Electric"
+          };
 
         updateCar(carName, updatedCar);
+
 
         // Set form to initial state
         setCarName("");
         setFuelQuantity("");
         setExpenseAmount("");
         setDistanceDriven("");
-    }
+    };
 
     const fuelQuantityInput = isGasDieselTab ?
         <div className="form-control">
@@ -70,6 +60,10 @@ export const ExpenseForm = () => {
             value={fuelQuantity}
             onChange={(e) => setFuelQuantity(e.target.value)}
             placeholder="Litres refueled"
+            min="1"
+            max="250"
+            required
+            title="Fuel quantity must be between 1 l and 250 l"
             />
         </div>
     :
@@ -78,6 +72,10 @@ export const ExpenseForm = () => {
             value={fuelQuantity}
             onChange={(e) => setFuelQuantity(e.target.value)}
             placeholder="kWh recharged"
+            min="1"
+            max="250"
+            required
+            title="Electricity quantity must be between 1 kWh and 250 kWh"
             />
          </div>;
 
@@ -120,6 +118,10 @@ export const ExpenseForm = () => {
                     value={carName}
                     onChange={(e) => setCarName(e.target.value)}
                     placeholder="Car name (make & model, registration plate, etc.)"
+                    minLength="1"
+                    maxLength="64"
+                    required
+                    title="Car name must be between 1 and 64 characters"
                     />
                 </div>
 
@@ -131,7 +133,11 @@ export const ExpenseForm = () => {
                     <input type="number" 
                     value={expenseAmount}
                     onChange={(e) => setExpenseAmount(e.target.value)}
-                    placeholder="Cost"
+                    placeholder="Cost (€)"
+                    min="0"
+                    max="10000"
+                    required
+                    title="Cost must be between 0 € and 10,000 €"
                     />
                 </div>
 
@@ -139,7 +145,11 @@ export const ExpenseForm = () => {
                     <input type="number" 
                     value={distanceDriven}
                     onChange={(e) => setDistanceDriven(e.target.value)}
-                    placeholder="Distance driven"
+                    placeholder="Distance driven (km)"
+                    min="0"
+                    max="5000"
+                    required
+                    title="Distance driven must be between 0 km and 5000 km"
                     />
                 </div>
 

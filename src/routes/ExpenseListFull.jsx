@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
-import Expense from "./Expense";
+import Expense from "../components/Expense";
 
 export const ExpenseListFull = () => {
 
@@ -17,12 +17,18 @@ export const ExpenseListFull = () => {
             </h3>
 
             <ul id="list" className="list">
-                {expenses.map(expense => (
-                    <Expense 
-                    key={expense.id}
-                    expense={expense}
-                    />
-                ))}
+                {expenses?.length === 0 ? (
+                    <li>
+                        No expenses added
+                    </li>
+                ) : (
+                    expenses?.map(expense => (
+                        <Expense 
+                        key={expense.id}
+                        expense={expense}
+                        />
+                    ))
+                )}
             </ul>
         </>
     )

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
-import Car from "./Car";
+import Car from "../components/Car";
 
 export const CarList = () => {
 
@@ -19,7 +19,7 @@ export const CarList = () => {
             <ul className="car-list">
                 {cars?.length === 0 ? (
                     <div>
-                        No cars found
+                        No cars added
                     </div>
                 ) : (
                     cars?.map(car => (
