@@ -2,9 +2,9 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { GlobalProvider } from "./context/GlobalState";
 import { Header } from "./components/Header";
-import { HomePage } from "./components/HomePage";
-import { CarList } from "./components/CarList";
-import { ExpenseListFull } from "./components/ExpenseListFull";
+import { HomePage } from "./routes/HomePage";
+import { CarList } from "./routes/CarList";
+import { ExpenseListFull } from "./routes/ExpenseListFull";
 
 function App() {
 
