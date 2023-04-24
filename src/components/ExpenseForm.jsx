@@ -12,7 +12,7 @@ export const ExpenseForm = () => {
 
     const [isGasDieselTab, setIsGasDieselTab] = useState(true);
 
-    const { addExpense } = useContext(GlobalContext);
+    const { addExpense, updateCar } = useContext(GlobalContext);
 
     const handleTabClick = (e) => {
         const tabName = e.target.getAttribute("name");
@@ -23,6 +23,7 @@ export const ExpenseForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Handle adding expenses
         const expenseType = isGasDieselTab ? "gas-diesel" : "electric";
 
         const newExpense = {
@@ -36,6 +37,25 @@ export const ExpenseForm = () => {
 
         addExpense(newExpense);
 
+        // Handle updating individual cars
+        let updatedCar;
+
+        if (!updatedCar) {
+            updatedCar = {
+                carType: isGasDieselTab ? "Gas/Diesel" : "Electric",
+                expenses: 0,
+                consumption: 0,
+                distanceDriven: 0
+            }
+        };
+
+        updatedCar.expenses += expenseAmount;
+        updatedCar.consumption += fuelQuantity;
+        updatedCar.distanceDriven += distanceDriven;
+
+        updateCar(carName, updatedCar);
+
+        // Set form to initial state
         setCarName("");
         setFuelQuantity("");
         setExpenseAmount("");

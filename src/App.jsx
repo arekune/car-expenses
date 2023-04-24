@@ -1,22 +1,25 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { GlobalProvider } from "./context/GlobalState";
 import { Header } from "./components/Header";
+import { HomePage } from "./components/HomePage";
 import { ExpenseTotal } from "./components/ExpenseTotal";
 import { ExpenseList } from "./components/ExpenseList";
 import { ExpenseForm } from "./components/ExpenseForm";
+import { CarList } from "./components/CarList";
+import { ExpenseListFull } from "./components/ExpenseListFull";
 
 function App() {
 
   return (
     <GlobalProvider>
       <Header />
-
       <div className="container">
-        <ExpenseTotal />
-        <ExpenseList />
-        <ExpenseForm />
+        <Routes>
+          <Route path="/" element={<HomePage />}/>
+          <Route path="/car-list" element={<CarList />} />
+          <Route path="/expense-list-full" element={<ExpenseListFull />} />
+        </Routes>
       </div>
     </GlobalProvider>
   );

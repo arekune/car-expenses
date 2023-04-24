@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
 import total from "../assets/total.svg";
 import gasoline from "../assets/gasoline.svg";
@@ -7,7 +8,7 @@ import electric from "../assets/electric.svg";
 export const ExpenseTotal = () => {
 
     const { expenses } = useContext(GlobalContext);
-
+    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState("All cars");
 
     const gasExpenses = expenses.filter(expense => expense.expenseType === "gas-diesel");
@@ -270,6 +271,10 @@ export const ExpenseTotal = () => {
              : 
                 null
             }
+
+            <Link to={"/car-list"} onClick={() => navigate("/car-list")}>
+                See totals and averages per car
+            </Link>
         </>
     )
 }

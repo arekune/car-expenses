@@ -47,7 +47,8 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin: 1rem 0;
   color: #fff8dc;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -55,7 +56,7 @@ h2 {
 h3 {
   border-bottom: 0.2rem solid rgba(0, 255, 255, 0.678);
   padding-bottom: 0.625rem;
-  margin: 2.5rem 0 0.625rem;
+  margin: 1.5rem 0 0.625rem;
   color: #fff8dc;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.75rem;
