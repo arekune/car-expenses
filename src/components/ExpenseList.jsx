@@ -35,7 +35,6 @@ export const ExpenseList = () => {
                 cursor: 'pointer',
                 fontFamily: "Gill Sans MT",
                 fontSize: '1.11em',
-                transition: 'all 0.3s ease-in-out',
                 }}
             >
                 See full expense history

@@ -283,7 +283,6 @@ export const ExpenseTotal = () => {
                 cursor: 'pointer',
                 fontFamily: "Gill Sans MT",
                 fontSize: '1.11em',
-                transition: 'all 0.3s ease-in-out',
                 }}
 
             >
