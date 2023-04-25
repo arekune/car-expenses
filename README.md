@@ -28,5 +28,5 @@ A GitHub Pages deployment is [available here](https://arekune.github.io/car-expe
 
 ## Acknowledgements
 
-The SVG's used in this app were sourced from [SVG Repo](https://www.svgrepo.com/)
+The SVG files used in this app were sourced from [SVG Repo](https://www.svgrepo.com/)
 (see [licensing](https://www.svgrepo.com/page/licensing/)).
