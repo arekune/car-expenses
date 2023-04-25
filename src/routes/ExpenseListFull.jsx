@@ -13,7 +13,7 @@ export const ExpenseListFull = () => {
             <div className="arrow" onClick={() => navigate("/")}/>
             
             <h3>
-                Refueling history
+                Refueling & recharging history
             </h3>
 
             <ul id="list" className="list">
