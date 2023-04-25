@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 A TUAS Frontend course project to learn React state management and components.
-An a frontend-only, mobile-responsive app that one might use to keep track of car refueling and recharging expenses.
+A frontend-only, mobile-responsive app that one might use to keep track of car refueling and recharging expenses.
 
 ## Installation
 
