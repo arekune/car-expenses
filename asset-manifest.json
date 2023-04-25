@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/car-expenses/static/css/main.b07217ed.css",
-    "main.js": "/car-expenses/static/js/main.7e71aa83.js",
+    "main.js": "/car-expenses/static/js/main.b5e9afc2.js",
     "static/media/gasoline.svg": "/car-expenses/static/media/gasoline.9ddaf9efe738e63f1ca6d8f7c6028bea.svg",
     "static/media/electric.svg": "/car-expenses/static/media/electric.9fc00b8579afaf92a5da092aa1cef010.svg",
     "index.html": "/car-expenses/index.html",
     "static/media/total.svg": "/car-expenses/static/media/total.c4a656356c5a0f57b4a0ce9779949f6c.svg",
     "main.b07217ed.css.map": "/car-expenses/static/css/main.b07217ed.css.map",
-    "main.7e71aa83.js.map": "/car-expenses/static/js/main.7e71aa83.js.map"
+    "main.b5e9afc2.js.map": "/car-expenses/static/js/main.b5e9afc2.js.map"
   },
   "entrypoints": [
     "static/css/main.b07217ed.css",
-    "static/js/main.7e71aa83.js"
+    "static/js/main.b5e9afc2.js"
   ]
 }
