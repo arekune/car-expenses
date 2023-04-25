@@ -28,9 +28,9 @@ function Car({ car }) {
             <li>
                 <h3>{car.carName}</h3>
                 <p>Type: {car.carType}</p>
-                <p>Expenses: {expenseTotal}</p>
-                <p>Consumption: {consumptionTotal}</p>
-                <p>Distance driven: {distanceTotal}</p>
+                <p>Expenses: {expenseTotal} €</p>
+                <p>Consumption: {consumptionTotal} {fuelType}</p>
+                <p>Distance driven: {distanceTotal} km</p>
                 <p>Average expenses per 100 km: {average(expenseTotal, distanceTotal)} €</p>
                 <p>Average consumption per 100 km: {average(consumptionTotal, distanceTotal)} {fuelType}</p>
 
