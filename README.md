@@ -7,7 +7,7 @@ A frontend-only, mobile-responsive app that one might use to keep track of car r
 
 ## Installation
 
-Clone repository locally and `cd` into the root (project-level) directory. 
+Clone repository locally and `cd` into the directory. 
 Make sure that you have Node installed (we recommend [nvm](https://github.com/nvm-sh/nvm)) and then install requirements:
 
 ```bash
